@@ -1,0 +1,17 @@
+{
+  "name": "lambda-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "zip index.js.zip index.js responses/** node_modules/**/**/** && aws lambda update-function-code --function-name my-todo-api --zip-file fileb://index.js.zip",
+    "deploy:windows": "tar -a -c -f index.js.zip index.js && aws lambda update-function-code --function-name my-todo-api --zip-file fileb://index.js.zip"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-emoji": "^1.11.0"
+  }
+}
